@@ -56,13 +56,3 @@ class Authenticator:
         expected_token = self.generate_token(message)
         return hmac.compare_digest(expected_token, token)
 
-# Example usage:
-if __name__ == "__main__":
-    auth = Authenticator()
-
-    # Example password hashing and verification
-    password = "my_secure_password"
-    hashed_password = auth.hash_password(password)
-    print(f"Password: {password}")
-    print(f"Hashed Password: {hashed_password}")
-    print(f"Password Verification: {auth.verify_password(password, hashed_password)}")
